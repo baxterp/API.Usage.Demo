@@ -16,7 +16,7 @@ namespace API.Usage.Demo.Classes
 
     public class F1NewsResponse
     {
-        public List<F1NewsItem> F1News { get; set; }
+        public List<F1NewsItem>? F1News { get; set; }
     }
 
     public class F1NewsReader
@@ -50,7 +50,7 @@ namespace API.Usage.Demo.Classes
             {
                 PropertyNameCaseInsensitive = true
             };
-            return JsonSerializer.Deserialize<F1NewsResponse>(json, options);
+            return JsonSerializer.Deserialize<F1NewsResponse>(json, options) ?? new F1NewsResponse { F1News = new() };
         }
     }
 }
