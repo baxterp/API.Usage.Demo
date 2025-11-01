@@ -20,6 +20,12 @@ namespace API.Usage.Demo.Controllers
             return View(result);
         }
 
+        public async Task<IActionResult> CryptoNews()
+        {
+            var result = await CryptoNewsReader.GetCryptoNews();
+            return View(result);
+        }
+
         public IActionResult Index()
         {
             return View();
