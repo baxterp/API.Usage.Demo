@@ -1,7 +1,7 @@
 ﻿@{
-    @model API.Usage.Demo.Classes.F1NewsResponse
-    var results = Model.F1News ?? Enumerable.Empty<API.Usage.Demo.Classes.F1NewsItem>();
-    ViewData["Title"] = "F1 News";
+    @model API.Usage.Demo.Classes.PremNewsResponse
+    var results = Model.PremNews ?? Enumerable.Empty<API.Usage.Demo.Classes.PremNewsItem>();
+    ViewData["Title"] = "Premier League News";
 }
 
 <div style="width: 100%; display: flex; justify-content: center;">
@@ -20,7 +20,7 @@
                             }
                             else
                             {
-                                <img src="~/img/F1.png" class="d-block w-100" alt="..">
+                                <img src="~/img/PremierLeague.png" class="d-block w-100" alt="..">
                             }
                             <div class="carousel-caption d-none d-md-block">
                                 <h6 class="title-bg title m-0">@item.Title</h6>
@@ -46,7 +46,7 @@
                             }
                             else
                             {
-                                <img src="~/img/F1.png" class="d-block w-100" alt="..">
+                                <img src="~/img/PremierLeague.png" class="d-block w-100" alt="..">
                             }
                             <div class="carousel-caption d-none d-md-block">
                                 <h6 class="title-bg title m-0">@item.Title</h6>

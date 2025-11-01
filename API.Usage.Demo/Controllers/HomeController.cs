@@ -31,6 +31,13 @@ namespace API.Usage.Demo.Controllers
             return View(result);
         }
 
+        public async Task<IActionResult> PremNews()
+        {
+            var rapidApiKey = _configuration["RapidApi:NewsKey"] ?? string.Empty;
+            var result = await PremNewsReader.GetPremNews(rapidApiKey);
+            return View(result);
+        }
+
         public IActionResult Index()
         {
             return View();
