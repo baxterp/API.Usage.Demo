@@ -21,7 +21,7 @@ namespace API.Usage.Demo.Classes
 
     public class CryptoNewsReader
     {
-        public async static Task<CryptoNewsResponse?> GetCryptoNews()
+        public async static Task<CryptoNewsResponse?> GetCryptoNews(string rapidApiKey)
         {
             var client = new HttpClient();
             var request = new HttpRequestMessage
@@ -30,7 +30,7 @@ namespace API.Usage.Demo.Classes
                 RequestUri = new Uri("https://cryptocurrency-news3.p.rapidapi.com/cryptonews/0/0"),
                 Headers =
                 {
-                    { "x-rapidapi-key", "03b95f15c1msh25adab3237d4b36p107fc2jsn8ca895c5ea85" },
+                    { "x-rapidapi-key", rapidApiKey },
                     { "x-rapidapi-host", "cryptocurrency-news3.p.rapidapi.com" },
                 },
             };

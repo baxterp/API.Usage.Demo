@@ -2,27 +2,32 @@ using System.Diagnostics;
 using API.Usage.Demo.Models;
 using Microsoft.AspNetCore.Mvc;
 using API.Usage.Demo.Classes;
+using Microsoft.Extensions.Configuration;
 
 namespace API.Usage.Demo.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IConfiguration _configuration;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IConfiguration configuration)
         {
             _logger = logger;
+            _configuration = configuration;
         }
 
         public async Task<IActionResult> F1News()
         {
-            var result = await F1NewsReader.GetF1News();
+            var rapidApiKey = _configuration["RapidApi:NewsKey"] ??  string.Empty;
+            var result = await F1NewsReader.GetF1News(rapidApiKey);
             return View(result);
         }
 
         public async Task<IActionResult> CryptoNews()
         {
-            var result = await CryptoNewsReader.GetCryptoNews();
+            var rapidApiKey = _configuration["RapidApi:NewsKey"] ?? string.Empty;
+            var result = await CryptoNewsReader.GetCryptoNews(rapidApiKey);
             return View(result);
         }
 

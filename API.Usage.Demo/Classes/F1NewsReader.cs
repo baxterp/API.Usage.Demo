@@ -21,7 +21,7 @@ namespace API.Usage.Demo.Classes
 
     public class F1NewsReader
     {
-        public async static Task<F1NewsResponse?> GetF1News()
+        public async static Task<F1NewsResponse?> GetF1News(string rapidApiKey)
         {
             var client = new HttpClient();
             var request = new HttpRequestMessage
@@ -30,7 +30,7 @@ namespace API.Usage.Demo.Classes
                 RequestUri = new Uri("https://f1-news1.p.rapidapi.com/f1news/0/0"),
                 Headers =
                 {
-                    { "x-rapidapi-key", "03b95f15c1msh25adab3237d4b36p107fc2jsn8ca895c5ea85" },
+                    { "x-rapidapi-key", rapidApiKey },
                     { "x-rapidapi-host", "f1-news1.p.rapidapi.com" },
                 },
             };
