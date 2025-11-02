@@ -5,7 +5,7 @@
 }
 
 <div style="width: 100%; display: flex; justify-content: center;">
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style="width:75%">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             @{
                 var isFirst = true;
@@ -23,7 +23,7 @@
                                 <img src="~/img/Crypto.png" class="d-block w-100" alt="..">
                             }
                             <div class="carousel-caption d-none d-md-block">
-                                <h6 class="title-bg title m-0">@item.Title</h6>
+                                <div class="h6 title-bg title m-0">@item.Title</div>
                                 @if (string.IsNullOrEmpty(item.Description) == false)
                                 {
                                     <div style="padding-top:5px">
@@ -49,7 +49,7 @@
                                 <img src="~/img/Crypto.png" class="d-block w-100" alt="..">
                             }
                             <div class="carousel-caption d-none d-md-block">
-                                <h6 class="title-bg title m-0">@item.Title</h6>
+                                <div class="h6 title-bg title m-0">@item.Title</div>
                                 @if (string.IsNullOrEmpty(item.Description) == false)
                                 {
                                     <div style="padding-top:5px">
