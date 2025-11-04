@@ -69,6 +69,10 @@ body {
     .description {
         font-size: 0.8rem;
     }
+
+    .btn-sm {
+        font-size: 0.8rem;
+    }
 }
 
 /* Mobile */
@@ -78,6 +82,14 @@ body {
     }
 
     .h6 {
-        font-size: 1rem;
+        font-size: 0.7rem;
+    }
+
+    .description {
+        font-size: 0.7rem;
+    }
+
+    .btn-sm {
+        font-size: 0.6rem;
     }
 }
