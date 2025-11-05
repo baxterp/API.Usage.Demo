@@ -45,6 +45,20 @@ namespace API.Usage.Demo.Controllers
             return View(result);
         }
 
+        public async Task<IActionResult> CryptoNewsSmall()
+        {
+            var rapidApiKey = _configuration["RapidApi:NewsKey"] ?? string.Empty;
+            var result = await CryptoNewsReader.GetCryptoNews(rapidApiKey);
+            return View(result);
+        }
+
+        public async Task<IActionResult> PremNewsSmall()
+        {
+            var rapidApiKey = _configuration["RapidApi:NewsKey"] ?? string.Empty;
+            var result = await PremNewsReader.GetPremNews(rapidApiKey);
+            return View(result);
+        }
+
         public IActionResult Index()
         {
             return View();

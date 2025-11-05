@@ -1,7 +1,7 @@
 ﻿@{
-    @model API.Usage.Demo.Classes.F1NewsResponse
-    var results = Model.F1News ?? Enumerable.Empty<API.Usage.Demo.Classes.F1NewsItem>();
-    ViewData["Title"] = "F1 News";
+    @model API.Usage.Demo.Classes.CryptoNewsResponse
+    var results = Model.CryptoNews ?? Enumerable.Empty<API.Usage.Demo.Classes.CryptoNewsItem>();
+    ViewData["Title"] = "Crypto News";
     Layout = "~/Views/Shared/_LayoutNoHeader.cshtml";   
 }
 
@@ -23,7 +23,7 @@
                                     }
                                     else
                                     {
-                                        <img src="~/img/F1.png" class="d-block w-100" alt="..">
+                                        <img src="~/img/Crypto.png" class="d-block w-100" alt="..">
                                     }
                                     <div class="carousel-caption">
                                         <div class="h6 title-bg title m-0">@item.Title</div>
@@ -49,7 +49,7 @@
                                     }
                                     else
                                     {
-                                        <img src="~/img/F1.png" class="d-block w-100" alt="..">
+                                        <img src="~/img/Crypto.png" class="d-block w-100" alt="..">
                                     }
                                     <div class="carousel-caption">
                                         <div class="h6 title-bg title m-0">@item.Title</div>

@@ -23,13 +23,15 @@
         .btn-sm {
             font-size: 0.6rem;
         }
+
+        .container {
+            margin-left: unset;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <main role="main" class="pb-3" style="padding-top:50px">
-            @RenderBody()
-        </main>
+        @RenderBody()
     </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
