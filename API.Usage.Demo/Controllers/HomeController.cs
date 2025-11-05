@@ -38,6 +38,13 @@ namespace API.Usage.Demo.Controllers
             return View(result);
         }
 
+        public async Task<IActionResult> F1NewsSmall()
+        {
+            var rapidApiKey = _configuration["RapidApi:NewsKey"] ?? string.Empty;
+            var result = await F1NewsReader.GetF1News(rapidApiKey);
+            return View(result);
+        }
+
         public IActionResult Index()
         {
             return View();
