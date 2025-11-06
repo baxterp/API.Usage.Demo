@@ -12,26 +12,25 @@
                 <div class="carousel-inner">
                     @{
                         var isFirst = true;
-                        foreach (var item in results.OrderByDescending(w => string.IsNullOrEmpty(w.ImageURL) == false)
-                            .ThenByDescending(w => string.IsNullOrEmpty(w.ImageURL)))
+                        foreach (var item in results.OrderByDescending(w => string.IsNullOrEmpty(w.ImageURL) == false))
                         {
                             if (isFirst)
                             {
                                 <div class="carousel-item active">
-                                    @if (string.IsNullOrEmpty(item.ImageURL) == false)
+                                    @if (string.IsNullOrEmpty(item.ImageURL) == false && API.Usage.Demo.Classes.URLHelper.IsValidUrl(item.ImageURL))
                                     {
-                                        <img src="@item.ImageURL" class="d-block w-100" alt="..">
+                                        <img src="@item.ImageURL" class="d-block w-100">
                                     }
                                     else
                                     {
-                                        <img src="~/img/PremierLeague.png" class="d-block w-100" alt="..">
+                                        <img src="~/img/PremierLeague.png" class="d-block w-100" style="min-height: 260px; max-height:293px; object-fit: cover">
                                     }
                                     <div class="carousel-caption">
                                         <div class="h6 title-bg title m-0">@item.Title</div>
                                         @if (string.IsNullOrEmpty(item.Description) == false)
                                         {
                                             <div style="padding-top:5px">
-                                                <p class="description">@item.Description</p>
+                                                <p class="description">@string.Concat(item.Description.Take(150).ToArray())</p>
                                             </div>
                                         }
                                         <div style="padding-top:5px">
@@ -44,20 +43,20 @@
                             else
                             {
                                 <div class="carousel-item">
-                                    @if (string.IsNullOrEmpty(item.ImageURL) == false)
+                                    @if (string.IsNullOrEmpty(item.ImageURL) == false && API.Usage.Demo.Classes.URLHelper.IsValidUrl(item.ImageURL))
                                     {
-                                        <img src="@item.ImageURL" class="d-block w-100" alt="..">
+                                        <img src="@item.ImageURL" class="d-block w-100">
                                     }
                                     else
                                     {
-                                        <img src="~/img/PremierLeague.png" class="d-block w-100" alt="..">
+                                        <img src="~/img/PremierLeague.png" class="d-block w-100" style="min-height: 260px; max-height:293px; object-fit: cover">
                                     }
                                     <div class="carousel-caption">
                                         <div class="h6 title-bg title m-0">@item.Title</div>
                                         @if (string.IsNullOrEmpty(item.Description) == false)
                                         {
                                             <div style="padding-top:5px">
-                                                <p class="description">@item.Description</p>
+                                                <p class="description">@string.Concat(item.Description.Take(150).ToArray())</p>
                                             </div>
                                         }
                                         <div style="padding-top:5px">
