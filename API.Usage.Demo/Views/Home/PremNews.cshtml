@@ -14,13 +14,13 @@
                     if (isFirst)
                     {
                         <div class="carousel-item active">
-                            @if (string.IsNullOrEmpty(item.ImageURL) == false)
+                            @if (string.IsNullOrEmpty(item.ImageURL) == false && API.Usage.Demo.Classes.URLHelper.IsValidUrl(item.ImageURL))
                             {
-                                <img src="@item.ImageURL" class="d-block w-100" alt="..">
+                                <img src="@item.ImageURL" class="d-block w-100">
                             }
                             else
                             {
-                                <img src="~/img/PremierLeague.png" class="d-block w-100" alt="..">
+                                <img src="~/img/PremierLeague.png" class="d-block w-100">
                             }
                             <div class="carousel-caption">
                                 <div class="h6 title-bg title m-0">@item.Title</div>
@@ -40,13 +40,13 @@
                     else
                     {
                         <div class="carousel-item">
-                            @if (string.IsNullOrEmpty(item.ImageURL) == false)
+                            @if (string.IsNullOrEmpty(item.ImageURL) == false && API.Usage.Demo.Classes.URLHelper.IsValidUrl(item.ImageURL))
                             {
-                                <img src="@item.ImageURL" class="d-block w-100" alt="..">
+                                <img src="@item.ImageURL" class="d-block w-100">
                             }
                             else
                             {
-                                <img src="~/img/PremierLeague.png" class="d-block w-100" alt="..">
+                                <img src="~/img/PremierLeague.png" class="d-block w-100">
                             }
                             <div class="carousel-caption">
                                 <div class="h6 title-bg title m-0">@item.Title</div>
