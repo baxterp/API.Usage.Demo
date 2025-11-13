@@ -45,6 +45,13 @@ namespace API.Usage.Demo.Controllers
             return View(result);
         }
 
+        public async Task<IActionResult> TechNews()
+        {
+            var rapidApiKey = _configuration["RapidApi:NewsKey"] ?? string.Empty;
+            var result = await TechNewsReader.GetTechNews(rapidApiKey);
+            return View(result);
+        }
+
         public async Task<IActionResult> F1NewsSmall()
         {
             var rapidApiKey = _configuration["RapidApi:NewsKey"] ?? string.Empty;
@@ -70,6 +77,13 @@ namespace API.Usage.Demo.Controllers
         {
             var rapidApiKey = _configuration["RapidApi:NewsKey"] ?? string.Empty;
             var result = await UKNewsReader.GetUKNews(rapidApiKey);
+            return View(result);
+        }
+
+        public async Task<IActionResult> TechNewsSmall()
+        {
+            var rapidApiKey = _configuration["RapidApi:NewsKey"] ?? string.Empty;
+            var result = await TechNewsReader.GetTechNews(rapidApiKey);
             return View(result);
         }
 
