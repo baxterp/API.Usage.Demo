@@ -19,11 +19,11 @@
                                 <div class="carousel-item active">
                                     @if (string.IsNullOrEmpty(item.ImageURL) == false && API.Usage.Demo.Classes.URLHelper.IsValidUrl(item.ImageURL))
                                     {
-                                        <img src="@item.ImageURL" class="d-block w-100" style="min-height: 260px; max-height:293px; object-fit: fill">
+                                        <img src="@item.ImageURL" class="d-block w-100" style="min-height: 260px; max-height:260px; object-fit: fill">
                                     }
                                     else
                                     {
-                                        <img src="~/img/F1.png" class="d-block w-100" style="min-height: 260px; max-height:293px; object-fit: fill">
+                                        <img src="~/img/F1.png" class="d-block w-100" style="min-height: 260px; max-height:260px; object-fit: fill">
                                     }
                                     <div class="carousel-caption">
                                         <div class="h6 title-bg title m-0">@item.Title</div>
@@ -45,11 +45,11 @@
                                 <div class="carousel-item">
                                     @if (string.IsNullOrEmpty(item.ImageURL) == false && API.Usage.Demo.Classes.URLHelper.IsValidUrl(item.ImageURL))
                                     {
-                                        <img src="@item.ImageURL" class="d-block w-100" style="min-height: 260px; max-height:293px; object-fit: fill">
+                                        <img src="@item.ImageURL" class="d-block w-100" style="min-height: 260px; max-height:260px; object-fit: fill">
                                     }
                                     else
                                     {
-                                        <img src="~/img/F1.png" class="d-block w-100" style="min-height: 260px; max-height:293px; object-fit: fill">
+                                        <img src="~/img/F1.png" class="d-block w-100" style="min-height: 260px; max-height:260px; object-fit: fill">
                                     }
                                     <div class="carousel-caption">
                                         <div class="h6 title-bg title m-0">@item.Title</div>

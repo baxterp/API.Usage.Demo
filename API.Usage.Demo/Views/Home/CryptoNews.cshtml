@@ -3,7 +3,9 @@
     var results = Model.CryptoNews ?? Enumerable.Empty<API.Usage.Demo.Classes.CryptoNewsItem>();
     ViewData["Title"] = "Cryptocurrency News";
 }
-
+<div style="width: 100%; display: flex; justify-content: center;">
+    <div class="h1" style="padding-bottom: 30px">Cryptocurrency News Feed</div>
+</div>
 <div style="width: 100%; display: flex; justify-content: center;">
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -16,11 +18,11 @@
                         <div class="carousel-item active">
                             @if (string.IsNullOrEmpty(item.ImageURL) == false && API.Usage.Demo.Classes.URLHelper.IsValidUrl(item.ImageURL))
                             {
-                                <img src="@item.ImageURL" class="d-block w-100">
+                                <img src="@item.ImageURL" class="d-block w-100" style="min-height: 648px; max-height: 648px; object-fit: fill">
                             }
                             else
                             {
-                                <img src="~/img/Crypto.png" class="d-block w-100">
+                                <img src="~/img/Crypto.png" class="d-block w-100" style="min-height: 648px; max-height: 648px; object-fit: fill">
                             }
                             <div class="carousel-caption">
                                 <div class="h6 title-bg title m-0">@item.Title</div>
@@ -42,11 +44,11 @@
                         <div class="carousel-item">
                             @if (string.IsNullOrEmpty(item.ImageURL) == false && API.Usage.Demo.Classes.URLHelper.IsValidUrl(item.ImageURL))
                             {
-                                <img src="@item.ImageURL" class="d-block w-100">
+                                <img src="@item.ImageURL" class="d-block w-100" style="min-height: 648px; max-height: 648px; object-fit: fill">
                             }
                             else
                             {
-                                <img src="~/img/Crypto.png" class="d-block w-100">
+                                <img src="~/img/Crypto.png" class="d-block w-100" style="min-height: 648px; max-height: 648px; object-fit: fill">
                             }
                             <div class="carousel-caption">
                                 <div class="h6 title-bg title m-0">@item.Title</div>
